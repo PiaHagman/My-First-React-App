@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Link, Routes } from "react-router-dom";
 
 import {
   TodoList,
@@ -16,25 +16,37 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        {/*  <Router>
-          <Navbar />
-
-          <Routes>
-            <Route path="/form" exact component={Form} />
-            <Route path="/users" component={Users} />
-            <Route path="/todolist" component={TodoList} />
-          </Routes>
-        </Router>
-
-        <Navbar /> */}
         <img src={logo} className="logo" alt="logo" />
+        {/* <Navbar /> */}
         <AccountMenu />
       </div>
-      <TodoList />
-      <Form message="Välkommen till denna sida" />
-      <Counter />
-      <Users />
-      {/* <InfinityList /> */}
+      {/* <div className="menu">
+        <ul>
+          <li>
+            {" "}
+            <Link to="/users">Users</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/form">Form</Link>{" "}
+          </li>
+          <li>
+            {" "}
+            <Link to="/todolist">TodoList</Link>{" "}
+          </li>
+        </ul>
+      </div> */}
+
+      {/* <TodoList /> */}
+      <Form message="Välkommen" />
+      <div className="App-intro">
+        <Routes>
+          <Route exact path="/counter" element={<Counter />} />
+          <Route exact path="/users" element={<Users />} />
+          <Route exact path="/form" element={<Form />} />
+          <Route exact path="/todolist" element={<TodoList />} />
+        </Routes>
+      </div>
     </div>
   );
 }
