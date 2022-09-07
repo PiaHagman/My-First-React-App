@@ -15,6 +15,7 @@ import {
 function App() {
   const [nameIsSet, setNameIsSet] = useState(false);
   const [name, setName] = useState("");
+  const [todos, setTodos] = useState([]);
 
   return (
     <div className="app">
@@ -24,8 +25,6 @@ function App() {
         </Link>
         <AccountMenu />
       </div>
-
-      {/* <Form message="Nice to have you here" /> */}
       <div className="App-intro">
         <Routes>
           <Route
@@ -34,20 +33,19 @@ function App() {
             element={
               <Form
                 name={name}
-                setYourName={(yourName) => {
-                  setName(yourName);
-                }}
+                setYourName={setName}
                 nameIsSet={nameIsSet}
-                showName={() => {
-                  setNameIsSet(true);
-                }}
+                showName={setNameIsSet}
               />
             }
           />
           <Route path="/counter" element={<Counter />} />
           <Route path="/users" element={<Users />} />
           <Route path="/form" element={<Form />} />
-          <Route path="/todolist" element={<TodoList />} />
+          <Route
+            path="/todolist"
+            element={<TodoList todos={todos} setTodos={setTodos} />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

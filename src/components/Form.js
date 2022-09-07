@@ -1,14 +1,10 @@
-import { useState } from "react";
 import "../App.css";
-
+//Refactoring: place boolean as object together with name
 const Form = ({ showName, nameIsSet, name, setYourName }) => {
-  /* const [name, setName] = useState(""); */
-  /* const [nameIsSet, setNameIsSet] = useState(false); */
-
   function handleKeyDown(event) {
     if (event.key === "Enter") {
       setYourName(event.target.value);
-      showName();
+      showName(true);
     }
   }
 
