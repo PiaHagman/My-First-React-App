@@ -1,50 +1,35 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Route, Link, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 import {
   TodoList,
-  InfinityList,
   Form,
   Counter,
   Users,
   AccountMenu,
-  Navbar,
+  ErrorPage,
 } from "./components/";
 
 function App() {
   return (
     <div className="app">
       <div className="header">
-        <img src={logo} className="logo" alt="logo" />
-        {/* <Navbar /> */}
+        <Link to="/">
+          <img src={logo} className="logo" alt="logo" />
+        </Link>
         <AccountMenu />
       </div>
-      {/* <div className="menu">
-        <ul>
-          <li>
-            {" "}
-            <Link to="/users">Users</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link to="/form">Form</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link to="/todolist">TodoList</Link>{" "}
-          </li>
-        </ul>
-      </div> */}
 
-      {/* <TodoList /> */}
-      <Form message="Välkommen" />
+      {/* <Form message="Nice to have you here" /> */}
       <div className="App-intro">
         <Routes>
-          <Route exact path="/counter" element={<Counter />} />
-          <Route exact path="/users" element={<Users />} />
-          <Route exact path="/form" element={<Form />} />
-          <Route exact path="/todolist" element={<TodoList />} />
+          <Route exact path="/" element={<Form />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/todolist" element={<TodoList />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </div>
