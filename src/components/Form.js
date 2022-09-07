@@ -12,7 +12,7 @@ const Form = ({ showName, nameIsSet, name, setYourName }) => {
     <div className="component-frame" style={{ border: `0px white solid` }}>
       {nameIsSet ? (
         <div style={{ border: `0px white solid` }}>
-          <p className="name-form">{`Nice to have you here ${name}!`}</p>
+          <p className="component-heading">{`Nice to have you here ${name}!`}</p>
           <p>
             This is my first SPA built in React and it doesn't really fill any
             purpose. Please navigate around to see different examples of react

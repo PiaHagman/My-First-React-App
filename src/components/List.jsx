@@ -2,8 +2,8 @@ import React, {  useEffect } from "react";
 import "../App.css";
 
 const TodoList = ({ todos, setTodos }) => {
-  
-    /* useEffect(() => {
+  /* 
+    useEffect(() => {
     setTodos([
       {
         content: "Köpa liten bil",
@@ -71,6 +71,10 @@ const TodoList = ({ todos, setTodos }) => {
   }
   return(
     <form className="todo-list component-frame">
+      <p className="component-heading">Write your own Todo's</p>
+      <p>
+        Be my guest and add your own todo's to this fancy list. Also note that they are saved when you navigate around in the page. Do not refresh the page though, then you will have to start all over again. 
+      </p>
         <ul>
           {todos.map((todo, index) => (
             <div key={`todo-${index}`} className={`todo ${todo.isCompleted && "todo-is-completed"}`}>

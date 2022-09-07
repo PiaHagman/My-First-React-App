@@ -12,9 +12,15 @@ function Users() {
 
   return (
     <div className="component-frame">
-      <h1>GitHub Users:</h1>
+      <p className="component-heading">GitHub Users</p>
+      <p>
+        This component fetches data from an open source API and displays a
+        number of GitHub Users, when (and if) you press the button. Nothing
+        fancy really, just a way to practice this as well.
+      </p>
+
       <button className="my-button" onClick={onClickFetchUsers}>
-        <span>{showUsers ? "Dölj" : "Hämta"}</span> GitHub Users!
+        <span>{showUsers ? "Hide" : "Show"}</span> GitHub Users!
       </button>
 
       {showUsers &&
