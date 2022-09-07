@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 
 import {
@@ -12,6 +13,9 @@ import {
 } from "./components/";
 
 function App() {
+  const [nameIsSet, setNameIsSet] = useState(false);
+  const [name, setName] = useState("");
+
   return (
     <div className="app">
       <div className="header">
@@ -24,7 +28,22 @@ function App() {
       {/* <Form message="Nice to have you here" /> */}
       <div className="App-intro">
         <Routes>
-          <Route exact path="/" element={<Form />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Form
+                name={name}
+                setYourName={(yourName) => {
+                  setName(yourName);
+                }}
+                nameIsSet={nameIsSet}
+                showName={() => {
+                  setNameIsSet(true);
+                }}
+              />
+            }
+          />
           <Route path="/counter" element={<Counter />} />
           <Route path="/users" element={<Users />} />
           <Route path="/form" element={<Form />} />
