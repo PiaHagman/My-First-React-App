@@ -10,15 +10,21 @@ import {
   Users,
   AccountMenu,
   ErrorPage,
+  PageColor,
 } from "./components/";
 
 function App() {
   const [nameIsSet, setNameIsSet] = useState(false);
   const [name, setName] = useState("");
   const [todos, setTodos] = useState([]);
+  const [backgroundColor, setBackgroundColor] = useState("#282c34");
 
+  const appStyle = {
+    backgroundColor: `${backgroundColor}`,
+    minHeight: "100vh",
+  };
   return (
-    <div className="app">
+    <div className="app" style={appStyle}>
       <div className="header">
         <Link to="/">
           <img src={logo} className="logo" alt="logo" />
@@ -49,6 +55,13 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
+
+      <footer>
+        <PageColor
+          backgroundColor={backgroundColor}
+          setBackgroundColor={setBackgroundColor}
+        />
+      </footer>
     </div>
   );
 }

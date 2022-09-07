@@ -6,7 +6,7 @@ import Users from "./Users";
 import AccountMenu from "./Menu";
 import Navbar from "./Navbar";
 import ErrorPage from "./ErrorPage";
-
+import PageColor from "./PageColor";
 export {
   Counter,
   Form,
@@ -16,4 +16,5 @@ export {
   AccountMenu,
   Navbar,
   ErrorPage,
+  PageColor,
 };
