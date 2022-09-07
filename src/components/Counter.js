@@ -19,9 +19,13 @@ const Counter = () => {
   return (
     <div className="component-frame">
       <p>{`${count}`}</p>
-      <button onClick={() => setCount(count + 1)}>Räkna uppåt</button>
+      <button className="my-button" onClick={() => setCount(count + 1)}>
+        Räkna uppåt
+      </button>
       <p>{`${count2}`}</p>
-      <button onClick={() => setCount2(count2 - 1)}>Räkna nedåt</button>
+      <button className="my-button" onClick={() => setCount2(count2 - 1)}>
+        Räkna nedåt
+      </button>
     </div>
   );
 };

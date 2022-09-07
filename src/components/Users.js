@@ -13,7 +13,7 @@ function Users() {
   return (
     <div className="component-frame">
       <h1>GitHub Users:</h1>
-      <button onClick={onClickFetchUsers}>
+      <button className="my-button" onClick={onClickFetchUsers}>
         <span>{showUsers ? "Dölj" : "Hämta"}</span> GitHub Users!
       </button>
 
