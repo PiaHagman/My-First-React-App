@@ -20,13 +20,13 @@ const Form = ({ showName, nameIsSet, name, setYourName }) => {
           </p>
         </div>
       ) : (
-        <form>
+        <form className="name-form">
           <input
             type="text"
             value={name}
             onChange={(e) => setYourName(e.target.value)} //Whenever there is a change, an anonymous function (which takes in the event object as a parameter) is fired which in turn calls the setName() function to update the name variable with the current value of the input field.
             onKeyDown={(event) => handleKeyDown(event)}
-            placeholder="Type your name"
+            placeholder="Please begin by typing you name here..."
           />
         </form>
       )}

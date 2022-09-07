@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
 
 import {
   TodoList,
@@ -26,9 +27,11 @@ function App() {
   return (
     <div className="app" style={appStyle}>
       <div className="header">
-        <Link to="/">
-          <img src={logo} className="logo" alt="logo" />
-        </Link>
+        <Tooltip title="Yes, this is me!">
+          <Link to="/">
+            <img src={logo} className="logo" alt="logo" />
+          </Link>
+        </Tooltip>
         <AccountMenu />
       </div>
       <div className="App-intro">

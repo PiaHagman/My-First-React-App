@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   color: white;
   box-sizing: border-box;
 
@@ -21,10 +21,9 @@ body {
 }
 .header {
   width: 500px;
-  margin-bottom: 50px;
+  margin: 100px 0 50px 0;
   display: flex;
   flex-direction: row;
-  
   justify-content: space-between;
 }
 
@@ -101,14 +100,21 @@ input {
   width: 100%;
 }
 
-@keyframes App-logo-spin {
+.name-form input{
+  background-color: #4C5270;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .component-frame{
   border: 2px solid white;
