@@ -22,7 +22,13 @@ const TodoList = ({ todos, setTodos }) => {
 
   
   useEffect(() => {
+    if(todos.length===0){
     createTodoAtIndex(null, todos.length - 1);
+    }
+    else{
+      setTimeout(() => {
+      document.forms[0].elements[todos.length - 1].focus(); //set the focus to the new input field inside of a timeout that triggers after 0 milliseconds
+    }, 0);}
   }, []);
   
   function handleKeyDown(event, index) {
