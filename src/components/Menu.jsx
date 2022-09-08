@@ -18,6 +18,8 @@ export default function AccountMenu() {
           </Link></Typography>
           <Typography sx={{ minWidth: 100 }}>
           <Link to="/users" className='menu-link'>GitHub Users</Link></Typography>
+          <Typography sx={{ minWidth: 100 }}>
+          <Link to="/weather" className='menu-link'>Weather</Link></Typography>
       </Box>
     </React.Fragment>
   );

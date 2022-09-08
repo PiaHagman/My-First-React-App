@@ -1,15 +1,19 @@
-import useFetchData from "./useFetchData";
+import FetchData from "./FetchData";
 import { useState } from "react";
 
 function Users() {
-  //const apiKey = "aa64c80b";
-  const { data } = useFetchData("https://api.github.com/users");
   const [showUsers, setShowUsers] = useState(false);
+  const [data, setData] = useState([]);
 
   const onClickFetchUsers = () => {
     setShowUsers(!showUsers);
+    fetchData();
   };
 
+  async function fetchData() {
+    const fetchedData = await FetchData("https://api.github.com/users");
+    setData(fetchedData);
+  }
   return (
     <div className="component-frame">
       <p className="component-heading">GitHub Users</p>

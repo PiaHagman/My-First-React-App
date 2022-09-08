@@ -7,6 +7,7 @@ import AccountMenu from "./Menu";
 import Navbar from "./Navbar";
 import ErrorPage from "./ErrorPage";
 import PageColor from "./PageColor";
+import Weather from "./Weather";
 export {
   Counter,
   Form,
@@ -17,4 +18,5 @@ export {
   Navbar,
   ErrorPage,
   PageColor,
+  Weather,
 };
