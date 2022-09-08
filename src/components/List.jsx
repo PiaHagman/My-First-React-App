@@ -24,7 +24,7 @@ const TodoList = ({ todos, setTodos }) => {
   useEffect(() => {
     createTodoAtIndex(null, todos.length - 1);
   }, []);
-
+  
   function handleKeyDown(event, index) {
     if (event.key === "Enter") {
       createTodoAtIndex(event, index);

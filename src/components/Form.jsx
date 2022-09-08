@@ -1,12 +1,19 @@
 import "../App.css";
+import React  from "react";
+import { useEffect } from "react";
 //Refactoring: place boolean as object together with name
-const Form = ({ showName, nameIsSet, name, setYourName }) => {
+
+const Form = ({ showName, nameIsSet, name, setYourName, bgColor }) => {
   function handleKeyDown(event) {
     if (event.key === "Enter") {
       setYourName(event.target.value);
       showName(true);
     }
   }
+  useEffect(() => {
+    
+},[]);
+
 
   return (
     <div className="component-frame" style={{ border: `0px white solid` }}>
@@ -26,12 +33,15 @@ const Form = ({ showName, nameIsSet, name, setYourName }) => {
             value={name}
             onChange={(e) => setYourName(e.target.value)} //Whenever there is a change, an anonymous function (which takes in the event object as a parameter) is fired which in turn calls the setName() function to update the name variable with the current value of the input field.
             onKeyDown={(event) => handleKeyDown(event)}
-            placeholder="Please begin by typing you name here..."
+            placeholder="Please type your name..."
+            style={{backgroundColor: `${bgColor}`} }
           />
         </form>
       )}
     </div>
   );
 };
+
+
 
 export default Form;

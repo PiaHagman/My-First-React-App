@@ -12,6 +12,7 @@ import {
   AccountMenu,
   ErrorPage,
   PageColor,
+  Weather,
 } from "./components/";
 
 function App() {
@@ -34,37 +35,32 @@ function App() {
         </Tooltip>
         <AccountMenu />
       </div>
-      <div className="App-intro">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Form
-                name={name}
-                setYourName={setName}
-                nameIsSet={nameIsSet}
-                showName={setNameIsSet}
-              />
-            }
-          />
-          <Route path="/counter" element={<Counter />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/form" element={<Form />} />
-          <Route
-            path="/todolist"
-            element={<TodoList todos={todos} setTodos={setTodos} />}
-          />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </div>
 
-      <footer>
-        <PageColor
-          backgroundColor={backgroundColor}
-          setBackgroundColor={setBackgroundColor}
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <Form
+              name={name}
+              setYourName={setName}
+              nameIsSet={nameIsSet}
+              showName={setNameIsSet}
+              bgColor={backgroundColor}
+            />
+          }
         />
-      </footer>
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/users" element={<Users />} />
+        <Route
+          path="/todolist"
+          element={<TodoList todos={todos} setTodos={setTodos} />}
+        />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+
+      <PageColor bgColor={backgroundColor} setBgColor={setBackgroundColor} />
     </div>
   );
 }
