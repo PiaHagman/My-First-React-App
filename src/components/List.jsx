@@ -33,7 +33,9 @@ const TodoList = ({ todos, setTodos }) => {
   
   function handleKeyDown(event, index) {
     if (event.key === "Enter") {
+      if(todos[index].content !== ""){
       createTodoAtIndex(event, index);
+      }
     }
     if (event.key === "Backspace" && todos[index].content === "") {
       event.preventDefault();

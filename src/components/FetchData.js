@@ -6,6 +6,6 @@ async function FetchData(url) {
     /*     .then((data) => data)
      */ .catch((err) => console.log(`Error: ${err}`));
 
-  return data;
+  return [data];
 }
 export default FetchData;
