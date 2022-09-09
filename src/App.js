@@ -50,7 +50,10 @@ function App() {
             />
           }
         />
-        <Route path="/counter" element={<Counter />} />
+        <Route
+          path="/counter"
+          element={<Counter bgColor={backgroundColor} />}
+        />
         <Route path="/users" element={<Users />} />
         <Route
           path="/todolist"

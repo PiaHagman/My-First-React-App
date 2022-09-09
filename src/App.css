@@ -165,3 +165,34 @@ text-align: center;
 .weather-card-data > img, p{
   margin:0;
 }
+.counter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0; 
+  filter: brightness(85%);
+  box-shadow: rgba(14, 30, 37, 0.80) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 50%;
+  min-width: 200px;
+  margin: 20px 0;
+}
+.counter-input-field{
+  filter: brightness(85%);
+  text-align: center;
+  padding: 5px;
+}
+.counter-buttons{
+  display:flex;
+  gap: 20px;
+}
+
+.counter-buttons button{
+  width: 75px;
+}
+.align-center{
+  display: flex;
+  justify-content: center;
+}
+.counter-value{
+  font-size: 30px;
+}
