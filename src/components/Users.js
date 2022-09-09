@@ -3,16 +3,17 @@ import { useState } from "react";
 
 function Users() {
   const [showUsers, setShowUsers] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   const onClickFetchUsers = () => {
-    setShowUsers(!showUsers);
     fetchData();
+    setShowUsers(!showUsers);
   };
 
   async function fetchData() {
     const fetchedData = await FetchData("https://api.github.com/users");
-    setData(fetchedData);
+    setData(fetchedData[0]);
+    console.log(fetchedData[0]);
   }
   return (
     <div className="component-frame">
@@ -26,12 +27,10 @@ function Users() {
       <button className="my-button" onClick={onClickFetchUsers}>
         <span>{showUsers ? "Hide" : "Show"}</span> GitHub Users!
       </button>
-
       {showUsers &&
-        data && //Using the && operator, the DOM will only get updated when the data variable has been updated with data from the API request – that is, when data != null
-        data.map((user) => (
-          <div className="text-white" key={user.id}>
-            <h3>{user.login}</h3>
+        data?.map((item) => (
+          <div className="text-white" key={item.id}>
+            <h3>{item.login}</h3>
           </div>
         ))}
     </div>
