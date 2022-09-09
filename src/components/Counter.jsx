@@ -7,7 +7,7 @@ const Counter = () => {
 
   return (
     <div className="component-frame">
-      <p className="component-heading">Counter</p>
+      <h1 className="component-heading">Counter</h1>
       <p>
         This might be the most redundant components in this page. It really doesn't do anything necessary.. But it was quite fun to construct.
       </p>

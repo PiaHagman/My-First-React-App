@@ -1,10 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import FetchData from "./FetchData";
-import "../weather/css/weather-icons-wind.css"
-import"../weather/css/weather-icons-wind.min.css"
-import "../weather/css/weather-icons.css"
-import "../weather/css/weather-icons.min.css"
 
 const Weather = () =>{
   const locations = [
@@ -15,38 +11,42 @@ const Weather = () =>{
     },
     {
       location: "Stockholm",
-      latitude: "57.7689708",
-      longitude: "12.2526081"    
+      latitude: "59.32932349999999",
+      longitude: "18.068580800000063"    
     },
     {
       location: "Göteborg",
-      latitude: "57.7689708",
-      longitude: "12.2526081"    
+      latitude: "57,7087",
+      longitude: "11,9751"    
     },
     {
       location: "Malmö",
-      latitude: "57.7689708",
-      longitude: "12.2526081"    
+      latitude: "55.604981",
+      longitude: "13.003822000000014"    
     }
   ]
-  
   
   const [lat, setLat] = useState("57.7689708");
   const [long, setLong] = useState("12.2526081");
   const [data, setData] = useState([]);
   const [showData, setShowData] = useState(false);
 
- 
+  useEffect(() => {
+    fetchWeatherData();
+    return() => console.log("Här skulle man kunna aborta api-callet, tex genom AbortController")
 
- const handleOnClick = () => {
-  setShowData(!showData);
-  fetchWeatherData();
+},[lat, long]);
+
+
+ const handleOnClick = (index) => {
+  setCoordinates(locations[index].latitude, locations[index].longitude)
+  fetchWeatherData(index);
+  setShowData(true);
 };
 
- async function fetchWeatherData(){
-/*   setCoordinates("57.7689708", "12.2526081");
- */  const apiKey= "34aae72a68460271e96c8ffc1d631d61"
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+ async function fetchWeatherData(index){
+  const apiKey= "34aae72a68460271e96c8ffc1d631d61"
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${locations[index].latitude}&lon=${locations[index].longitude}&appid=${apiKey}&units=metric`;
   const fetchedData = await FetchData(url);
   setData(fetchedData);
  }
@@ -56,42 +56,30 @@ const Weather = () =>{
   setLong(longitude);
   
  }
-
- /*  useEffect(() => {
-        fetchWeatherData();
-        setShowData(!showData)
-        return() => console.log("Här skulle man kunna aborta api-callet, tex genom AbortController")
-
-    },[lat, long]); */
-  
   return(
     <div className="component-frame">
-      <p className="component-heading">Some weather</p>
+      <h1 className="component-heading">Some weather</h1>
       <p>Pick one of the following places to get it's current weather. </p>
       <div className="weather-card">
-      <div className="weather-card-buttons" style={{width:"400px"}}>
-      <button className="my-button">{locations[0].location}</button>
-      <button className="my-button">{locations[1].location}</button>
-      <button className="my-button">{locations[2].location}</button>
-      <button className="my-button">{locations[3].location}</button>
-      <button className="my-button" onClick= {handleOnClick}>Hämta väder för Lerum</button>
+        <div className="weather-card-buttons" style={{width:"400px"}}>
+          {locations.map((item, index) => (
+          <button className="my-button" 
+          onClick= {() => {handleOnClick(index)}}>{item.location}</button>
+          ))}
+        </div>
 
-      </div>
-
-    {showData && data && 
-      data.map(({weather, main, id, name}) => (
-        <div key={id} className="weather-card-data">
-        <h2>{name}</h2>
-        <img alt="weather icon" src={`http://openweathermap.org/img/w/${weather[0].icon}.png`}/> 
-        <p>{weather[0].description}</p>
-        <p>{Math.round(main.temp)} &#8451;</p>
-      </div>
-      ))}  
-
+        {showData && data && 
+          data.map(({weather, main, id, name}) => (
+            <div key={id} className="weather-card-data">
+              <h2>{name}</h2>
+              <img alt="weather icon" src={`http://openweathermap.org/img/w/${weather[0].icon}.png`}/> 
+              <p>{weather[0].description}</p>
+              <p>{Math.round(main.temp)} &#8451;</p>
+            </div>
+          ))}  
       </div>
     </div>
   )
-
 }
 
 export default Weather;

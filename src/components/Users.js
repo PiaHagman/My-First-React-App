@@ -16,7 +16,7 @@ function Users() {
   }
   return (
     <div className="component-frame">
-      <p className="component-heading">GitHub Users</p>
+      <h1 className="component-heading">GitHub Users</h1>
       <p>
         This component fetches data from an open source API and displays a
         number of GitHub Users, when (and if) you press the button. Nothing

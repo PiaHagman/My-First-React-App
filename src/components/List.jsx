@@ -79,7 +79,7 @@ const TodoList = ({ todos, setTodos }) => {
   }
   return(
     <form className="todo-list component-frame">
-      <p className="component-heading">Write your own Todo's</p>
+      <h1 className="component-heading">Write your own Todo's</h1>
       <p>
         Be my guest and add your own todo's to this fancy list. You can also remove todo's and mark them as done. 
         Also note that they are saved when you navigate around the page. Do not refresh the page though, then you will have to start all over again. 
