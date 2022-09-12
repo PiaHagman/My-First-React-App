@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# My First React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_EC Utbildning, "React" september 2022_
+<br>
+_Pia Hagman_
 
-## Available Scripts
+This is my first SPA built in React, which was done as one of the assignments in the course _React_ at _EC Utbildning_.
+<br><br>
+This app does not have a specific purpose, more than practicing how to use components, hooks and routing in React. It consists of 5 different routes (including index page) which use a couple of different components to make this page interactive with its user.
+<br><br>
+<img src="./src/img/index.png" width="400px">
 
-In the project directory, you can run:
+## Features/Components
 
-### `npm start`
+Features of this app are:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Todo List
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In this todo list you can add and remove todo's, as well as mark them as done. They are saved by using useState hook.
+<br><br>
+<img src="./src/img/todos.png" width="400px">
 
-### `npm test`
+### Weather Forecast
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The weather component uses another component FetchData.jsx to get data from the external API [https://openweathermap.org/](https://openweathermap.org/). Potential improvements here would be that the user could pick a city of their own choice to fetch data for, since there is an inbuilt API request for this. <br><br>
+<img src="./src/img/weather.png" width="400px">
 
-### `npm run build`
+### Forms
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There are a few forms in this page. The first one is asking for your name input to welcome you, at index page and there is also a form in the counter component to be able to save take and save user input in the useState hook. The todo list is actually also built as a form.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Open API calls
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Except for the already mentioned API used in my Weather component, I made a call to [https://api.github.com/users](https://api.github.com/users) in my User.jsx component. The only reason I kept this component in this page was because I wanted to try how my FetchData.jsx worked when using it from different components. Otherwise it is quite redundant.
 
-### `npm run eject`
+### Counter
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A very simple counter witch I might want to expand later on when there is time. A good practice in using hooks, sending states as props and components in components.
+<br><br>
+<img src="./src/img/counter.png" width="400px">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Change of Background Color
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This was also good practicing, not least when it came to _lifting state up_ when I wanted the user choice of background color to consist even when navigating around in the page. And how this background color also affected other components background colors, using variables.
+<br><br>
+<img src="./src/img/weather_color.png" width="400px">
