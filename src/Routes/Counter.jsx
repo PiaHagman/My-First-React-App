@@ -2,11 +2,12 @@ import { useState } from "react";
 import "../App.css";
 
 const Counter = (props) => {
+  
   const [currentValue, setCurrentValue] = useState(0);
   const [inputValue, setInputValue] = useState()
   
   function handleKeyDown(e) {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && inputValue==null) {
       setInputValue(parseFloat(e.target.value));
  }
   }
@@ -30,11 +31,19 @@ const Counter = (props) => {
             style={{backgroundColor:`${props.bgColor}`}}
       />
       <div className="counter-buttons">
-        <button className="my-button" onClick={() => setCurrentValue(currentValue + inputValue)}>
-          + {inputValue}
+        <button className="my-button" onClick={() => {
+          if(inputValue != null) {
+            setCurrentValue(currentValue + inputValue)}
+            else{return;}
+          
+        }}> + {inputValue}
         </button>
-        <button className="my-button" onClick={() => setCurrentValue(currentValue - inputValue)}>
-          - {inputValue}
+        <button className="my-button" onClick={() => {
+          if(inputValue != null) {
+            setCurrentValue(currentValue - inputValue)}
+            else{return;}
+          
+        }}> - {inputValue}
         </button> 
       </div>
       <div>Summa:</div>
