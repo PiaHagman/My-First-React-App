@@ -1,25 +1,7 @@
 import React, {  useEffect } from "react";
-import "../App.css";
+import "../../App.css";
 
 const TodoList = ({ todos, setTodos }) => {
-  /* 
-    useEffect(() => {
-    setTodos([
-      {
-        content: "Köpa liten bil",
-        isCompleted: false,
-      },
-      {
-        content: "Handla hö och halm till Neville",
-        isCompleted: false,
-      },
-      {
-        content: "Presenter till Noah",
-        isCompleted: true,
-      },
-    ]);
-  },[]); */
-
   
   useEffect(() => {
     if(todos.length===0){

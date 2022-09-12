@@ -35,7 +35,7 @@ Except for the already mentioned API used in my Weather component, I made a call
 
 ### Counter
 
-A very simple counter witch I might want to expand later on when there is time. A good practice in using hooks, sending states as props and components in components.
+A very simple counter witch I might want to expand to more of a calculator later on, when/if there is time. A good practice in using hooks.
 <br><br>
 <img src="./src/img/counter.png" width="400px">
 

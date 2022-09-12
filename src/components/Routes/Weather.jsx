@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import FetchData from "../components/FetchData";
+import FetchData from "../FetchData";
 
 const Weather = () =>{
   const locations = [

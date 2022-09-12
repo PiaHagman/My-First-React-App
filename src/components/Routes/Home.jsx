@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 import React  from "react";
 import { useEffect } from "react";
 //Refactoring: place boolean as object together with name

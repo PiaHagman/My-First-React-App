@@ -1,4 +1,4 @@
-import FetchData from "../components/FetchData";
+import FetchData from "../FetchData";
 import { useState } from "react";
 
 function Users() {
