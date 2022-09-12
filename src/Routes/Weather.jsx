@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import FetchData from "./FetchData";
+import FetchData from "../components/FetchData";
 
 const Weather = () =>{
   const locations = [
@@ -58,7 +58,7 @@ const Weather = () =>{
  }
   return(
     <div className="component-frame">
-      <h1 className="component-heading">Some weather</h1>
+      <h1 className="component-heading">Weather Forecast</h1>
       <p>Pick one of the following places to get it's current weather. </p>
       <div className="weather-card">
         <div className="weather-card-buttons" style={{width:"400px"}}>

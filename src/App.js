@@ -6,14 +6,14 @@ import Tooltip from "@mui/material/Tooltip";
 
 import {
   TodoList,
-  Form,
+  Home,
   Counter,
   Users,
   AccountMenu,
   ErrorPage,
   PageColor,
   Weather,
-} from "./components/";
+} from "./components";
 
 function App() {
   const [nameIsSet, setNameIsSet] = useState(false);
@@ -41,7 +41,7 @@ function App() {
           exact
           path="/"
           element={
-            <Form
+            <Home
               name={name}
               setYourName={setName}
               nameIsSet={nameIsSet}

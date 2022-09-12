@@ -3,7 +3,7 @@ import React  from "react";
 import { useEffect } from "react";
 //Refactoring: place boolean as object together with name
 
-const Form = ({ showName, nameIsSet, name, setYourName, bgColor }) => {
+const Home = ({ showName, nameIsSet, name, setYourName, bgColor }) => {
   function handleKeyDown(event) {
     if (event.key === "Enter") {
       setYourName(event.target.value);
@@ -44,4 +44,4 @@ const Form = ({ showName, nameIsSet, name, setYourName, bgColor }) => {
 
 
 
-export default Form;
+export default Home;
