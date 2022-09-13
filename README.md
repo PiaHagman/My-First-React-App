@@ -32,6 +32,8 @@ There are a few forms in this page. The first one is asking for your name input 
 ### Open API calls
 
 Except for the already mentioned API used in my Weather component, I made a call to [https://api.github.com/users](https://api.github.com/users) in my User.jsx component. The only reason I kept this component in this page was because I wanted to try how my FetchData.jsx worked when using it from different components. Otherwise it is quite redundant.
+<br><br>
+<img src="./src/img/gitHubUsers.png" width="400px">
 
 ### Counter
 
