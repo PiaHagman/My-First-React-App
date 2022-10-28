@@ -4,6 +4,8 @@ import { useEffect } from "react";
 //Refactoring: place boolean as object together with name
 
 const Home = ({ showName, nameIsSet, name, setYourName, bgColor }) => {
+  
+  
   function handleKeyDown(event) {
     if (event.key === "Enter") {
       setYourName(event.target.value);
